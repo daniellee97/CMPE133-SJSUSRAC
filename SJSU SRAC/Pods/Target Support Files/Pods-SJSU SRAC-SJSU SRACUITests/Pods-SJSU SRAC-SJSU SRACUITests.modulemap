@@ -1,0 +1,6 @@
+framework module Pods_SJSU_SRAC_SJSU_SRACUITests {
+  umbrella header "Pods-SJSU SRAC-SJSU SRACUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
