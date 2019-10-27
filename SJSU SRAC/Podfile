@@ -6,11 +6,8 @@ target 'SJSU SRAC' do
   use_frameworks!
 
   # Pods for SJSU SRAC
-  # add pods for desired Firebase products
-  # https://firebase.google.com/docs/ios/setup#available-pods
     pod 'Firebase/Analytics'
     pod 'Firebase/Auth'
-
   target 'SJSU SRACTests' do
     inherit! :search_paths
     # Pods for testing
