@@ -19,9 +19,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         userTextField.text = ""
         passwordTextField.text = ""
-        if #available(iOS 11.0, *) {
-            ViewController.
-        }
         
     }
     @IBAction func createAccountClicked(_ sender: Any) {

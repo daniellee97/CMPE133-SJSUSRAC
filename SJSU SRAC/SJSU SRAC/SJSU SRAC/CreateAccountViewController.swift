@@ -12,9 +12,6 @@ class CreateAccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if #available(iOS 11.0, *) {
-            someView.topAnchor 
-        }
         // Do any additional setup after loading the view.
     }
 
