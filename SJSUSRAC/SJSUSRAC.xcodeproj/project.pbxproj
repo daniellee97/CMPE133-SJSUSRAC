@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B3C0DAEEA8384D56E993CE8 /* Pods_SJSUSRAC_SJSUSRACUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921AEBE9DFFB7F06F648AB3C /* Pods_SJSUSRAC_SJSUSRACUITests.framework */; };
+		7F3210E8D988D82C97D275A0 /* Pods_SJSUSRAC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1119D2F909300A3C01178B95 /* Pods_SJSUSRAC.framework */; };
 		8302283423665B5B002A1F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8302283323665B5B002A1F23 /* AppDelegate.swift */; };
 		8302283623665B5B002A1F23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8302283523665B5B002A1F23 /* SceneDelegate.swift */; };
 		8302283823665B5B002A1F23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8302283723665B5B002A1F23 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 		8302286923665D67002A1F23 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8302286823665D67002A1F23 /* Utilities.swift */; };
 		8302286B23665D72002A1F23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8302286A23665D72002A1F23 /* Constants.swift */; };
 		8302286D23666522002A1F23 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8302286C23666522002A1F23 /* HomeViewController.swift */; };
+		8302287123669751002A1F23 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8302287023669751002A1F23 /* GoogleService-Info.plist */; };
+		9860E0FBA66628538383D407 /* Pods_SJSUSRACTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE72F35B2C121D38D890CCA /* Pods_SJSUSRACTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05EFEF71C2768BE8632AC908 /* Pods-SJSUSRAC-SJSUSRACUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSUSRAC-SJSUSRACUITests.debug.xcconfig"; path = "Target Support Files/Pods-SJSUSRAC-SJSUSRACUITests/Pods-SJSUSRAC-SJSUSRACUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1119D2F909300A3C01178B95 /* Pods_SJSUSRAC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJSUSRAC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F2C77DC85EF542881439BF4 /* Pods-SJSUSRACTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSUSRACTests.debug.xcconfig"; path = "Target Support Files/Pods-SJSUSRACTests/Pods-SJSUSRACTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8302283023665B5B002A1F23 /* SJSUSRAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SJSUSRAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8302283323665B5B002A1F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8302283523665B5B002A1F23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +64,13 @@
 		8302286823665D67002A1F23 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		8302286A23665D72002A1F23 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8302286C23666522002A1F23 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8302287023669751002A1F23 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		921AEBE9DFFB7F06F648AB3C /* Pods_SJSUSRAC_SJSUSRACUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJSUSRAC_SJSUSRACUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92CED8316C69F13B17944262 /* Pods-SJSUSRAC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSUSRAC.release.xcconfig"; path = "Target Support Files/Pods-SJSUSRAC/Pods-SJSUSRAC.release.xcconfig"; sourceTree = "<group>"; };
+		9B208875FDFB7E47904313EE /* Pods-SJSUSRAC-SJSUSRACUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSUSRAC-SJSUSRACUITests.release.xcconfig"; path = "Target Support Files/Pods-SJSUSRAC-SJSUSRACUITests/Pods-SJSUSRAC-SJSUSRACUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CBE72F35B2C121D38D890CCA /* Pods_SJSUSRACTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJSUSRACTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5B0A6151E6C218984674C18 /* Pods-SJSUSRACTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSUSRACTests.release.xcconfig"; path = "Target Support Files/Pods-SJSUSRACTests/Pods-SJSUSRACTests.release.xcconfig"; sourceTree = "<group>"; };
+		E7BE06BC2C37A9209D612495 /* Pods-SJSUSRAC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSUSRAC.debug.xcconfig"; path = "Target Support Files/Pods-SJSUSRAC/Pods-SJSUSRAC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F3210E8D988D82C97D275A0 /* Pods_SJSUSRAC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9860E0FBA66628538383D407 /* Pods_SJSUSRACTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +94,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B3C0DAEEA8384D56E993CE8 /* Pods_SJSUSRAC_SJSUSRACUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FFC21ED6618F567ABE202D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7BE06BC2C37A9209D612495 /* Pods-SJSUSRAC.debug.xcconfig */,
+				92CED8316C69F13B17944262 /* Pods-SJSUSRAC.release.xcconfig */,
+				05EFEF71C2768BE8632AC908 /* Pods-SJSUSRAC-SJSUSRACUITests.debug.xcconfig */,
+				9B208875FDFB7E47904313EE /* Pods-SJSUSRAC-SJSUSRACUITests.release.xcconfig */,
+				4F2C77DC85EF542881439BF4 /* Pods-SJSUSRACTests.debug.xcconfig */,
+				E5B0A6151E6C218984674C18 /* Pods-SJSUSRACTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8302282723665B5B002A1F23 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +122,8 @@
 				8302284923665B5D002A1F23 /* SJSUSRACTests */,
 				8302285423665B5D002A1F23 /* SJSUSRACUITests */,
 				8302283123665B5B002A1F23 /* Products */,
+				0FFC21ED6618F567ABE202D2 /* Pods */,
+				E7AF5D45D8BBFF1499CFC4C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +145,7 @@
 				8302286723665D4B002A1F23 /* Helpers */,
 				8302283923665B5B002A1F23 /* Main.storyboard */,
 				8302283E23665B5C002A1F23 /* LaunchScreen.storyboard */,
+				8302287023669751002A1F23 /* GoogleService-Info.plist */,
 				8302284123665B5C002A1F23 /* Info.plist */,
 			);
 			path = SJSUSRAC;
@@ -164,6 +198,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		E7AF5D45D8BBFF1499CFC4C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1119D2F909300A3C01178B95 /* Pods_SJSUSRAC.framework */,
+				921AEBE9DFFB7F06F648AB3C /* Pods_SJSUSRAC_SJSUSRACUITests.framework */,
+				CBE72F35B2C121D38D890CCA /* Pods_SJSUSRACTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -171,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8302285A23665B5D002A1F23 /* Build configuration list for PBXNativeTarget "SJSUSRAC" */;
 			buildPhases = (
+				6FCC8009E12E965C5114526B /* [CP] Check Pods Manifest.lock */,
 				8302282C23665B5B002A1F23 /* Sources */,
 				8302282D23665B5B002A1F23 /* Frameworks */,
 				8302282E23665B5B002A1F23 /* Resources */,
+				B1E94B2F6ACCD80F9CAB615E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,6 +234,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8302285D23665B5D002A1F23 /* Build configuration list for PBXNativeTarget "SJSUSRACTests" */;
 			buildPhases = (
+				6138CC91E06EEB19D3F289E0 /* [CP] Check Pods Manifest.lock */,
 				8302284223665B5D002A1F23 /* Sources */,
 				8302284323665B5D002A1F23 /* Frameworks */,
 				8302284423665B5D002A1F23 /* Resources */,
@@ -206,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8302286023665B5D002A1F23 /* Build configuration list for PBXNativeTarget "SJSUSRACUITests" */;
 			buildPhases = (
+				D569364DB34BCADD51310004 /* [CP] Check Pods Manifest.lock */,
 				8302284D23665B5D002A1F23 /* Sources */,
 				8302284E23665B5D002A1F23 /* Frameworks */,
 				8302284F23665B5D002A1F23 /* Resources */,
+				4888F19F5E7F1313DF31F135 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8302284023665B5C002A1F23 /* LaunchScreen.storyboard in Resources */,
+				8302287123669751002A1F23 /* GoogleService-Info.plist in Resources */,
 				8302283D23665B5C002A1F23 /* Assets.xcassets in Resources */,
 				8302283B23665B5B002A1F23 /* Main.storyboard in Resources */,
 			);
@@ -289,6 +339,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4888F19F5E7F1313DF31F135 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SJSUSRAC-SJSUSRACUITests/Pods-SJSUSRAC-SJSUSRACUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SJSUSRAC-SJSUSRACUITests/Pods-SJSUSRAC-SJSUSRACUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SJSUSRAC-SJSUSRACUITests/Pods-SJSUSRAC-SJSUSRACUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6138CC91E06EEB19D3F289E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SJSUSRACTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FCC8009E12E965C5114526B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SJSUSRAC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1E94B2F6ACCD80F9CAB615E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SJSUSRAC/Pods-SJSUSRAC-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SJSUSRAC/Pods-SJSUSRAC-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SJSUSRAC/Pods-SJSUSRAC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D569364DB34BCADD51310004 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SJSUSRAC-SJSUSRACUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8302282C23665B5B002A1F23 /* Sources */ = {
@@ -472,6 +625,7 @@
 		};
 		8302285B23665B5D002A1F23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7BE06BC2C37A9209D612495 /* Pods-SJSUSRAC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -490,6 +644,7 @@
 		};
 		8302285C23665B5D002A1F23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92CED8316C69F13B17944262 /* Pods-SJSUSRAC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -508,6 +663,7 @@
 		};
 		8302285E23665B5D002A1F23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F2C77DC85EF542881439BF4 /* Pods-SJSUSRACTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -530,6 +686,7 @@
 		};
 		8302285F23665B5D002A1F23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5B0A6151E6C218984674C18 /* Pods-SJSUSRACTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -552,6 +709,7 @@
 		};
 		8302286123665B5D002A1F23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05EFEF71C2768BE8632AC908 /* Pods-SJSUSRAC-SJSUSRACUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -572,6 +730,7 @@
 		};
 		8302286223665B5D002A1F23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B208875FDFB7E47904313EE /* Pods-SJSUSRAC-SJSUSRACUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

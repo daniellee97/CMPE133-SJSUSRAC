@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class CreateAccountViewController: UIViewController {
 
@@ -62,7 +64,42 @@ class CreateAccountViewController: UIViewController {
         }else {
             
             //create cleaned version of the data
+            let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let studentID = studentIDTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            // create users
+            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+                
+                //check for error
+                if err != nil{
+                    self.showErrorMessage("Error occurs while creating user")
+                } else {
+                    
+                    //user was created
+                    let db = Firestore.firestore()
+                    db.collection("users").addDocument(data: ["first_name": firstName, "last_name": lastName, "studentID": studentID, "email": email, "password": password, "uid": result!.user.uid]) { (error) in
+                        
+                        if error != nil {
+                            
+                            self.showErrorMessage("Error happened while saving user data")
+                            
+                        }
+                    }
+                }
+            }
+            
+            //transition to home screen
+            transitionToHomePage()
         }
+    }
+    
+    private func transitionToHomePage() {
+        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.HomeViewController) as? HomeViewController
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
     }
     
     private func showErrorMessage (_ message: String) {
