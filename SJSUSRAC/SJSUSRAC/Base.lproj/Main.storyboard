@@ -37,6 +37,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3S-b5-6xP">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
                                         <state key="normal" title="Log In"/>
+                                        <connections>
+                                            <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MqL-zf-Xv1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCu-Cz-W0g">
                                         <rect key="frame" x="0.0" y="50" width="334" height="30"/>
@@ -60,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9gL-J1-Bb2">
-                                <rect key="frame" x="40" y="537" width="334" height="160"/>
+                                <rect key="frame" x="40" y="546.5" width="334" height="140.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ile-NO-Ugk">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -73,10 +76,10 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHA-zA-4nf">
                                         <rect key="frame" x="0.0" y="60" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dh-e4-d4D">
-                                        <rect key="frame" x="0.0" y="120" width="334" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dh-e4-d4D">
+                                        <rect key="frame" x="0.0" y="120" width="334" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -84,7 +87,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="eHA-zA-4nf" firstAttribute="height" secondItem="ile-NO-Ugk" secondAttribute="height" id="Aqc-wH-UNp"/>
-                                    <constraint firstItem="1Dh-e4-d4D" firstAttribute="height" secondItem="ile-NO-Ugk" secondAttribute="height" id="lSf-g9-e5y"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -94,12 +96,12 @@
                             <constraint firstItem="aaK-ey-NhJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="1tP-jL-GwJ"/>
                             <constraint firstItem="ENv-QY-YKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="2Ed-fe-Zun"/>
                             <constraint firstItem="HFd-lO-AZ6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="2hc-zX-MWH"/>
-                            <constraint firstItem="HFd-lO-AZ6" firstAttribute="top" secondItem="9gL-J1-Bb2" secondAttribute="bottom" constant="45" id="4a2-1N-MN4"/>
                             <constraint firstItem="ENv-QY-YKQ" firstAttribute="top" secondItem="aaK-ey-NhJ" secondAttribute="bottom" constant="20" id="9Xj-Yi-cCj"/>
                             <constraint firstItem="aaK-ey-NhJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="b9W-QM-KnZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aaK-ey-NhJ" secondAttribute="trailing" constant="40" id="dtX-ZR-uvR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ENv-QY-YKQ" secondAttribute="trailing" constant="40" id="kxs-GN-IJd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9gL-J1-Bb2" secondAttribute="trailing" constant="40" id="pCe-AA-4Ie"/>
+                            <constraint firstItem="HFd-lO-AZ6" firstAttribute="top" secondItem="9gL-J1-Bb2" secondAttribute="bottom" constant="55" id="ted-gb-gh9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HFd-lO-AZ6" secondAttribute="trailing" constant="40" id="y0c-36-pLP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HFd-lO-AZ6" secondAttribute="bottom" constant="40" id="y5h-yO-VaF"/>
                         </constraints>
@@ -116,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="138"/>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="P1q-nw-ySs">
@@ -172,7 +174,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5uw-jm-c1g">
-                                <rect key="frame" x="40" y="712" width="334" height="100"/>
+                                <rect key="frame" x="40" y="731.5" width="334" height="80.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Da-zn-QFM">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -184,16 +186,13 @@
                                             <action selector="signUp:" destination="Rki-fB-8oc" eventType="touchUpInside" id="Kar-aw-WZb"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmg-hU-D6O">
-                                        <rect key="frame" x="0.0" y="60" width="334" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmg-hU-D6O">
+                                        <rect key="frame" x="0.0" y="60" width="334" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="Dmg-hU-D6O" firstAttribute="height" secondItem="5Da-zn-QFM" secondAttribute="height" id="H3O-oV-BIh"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -239,19 +238,124 @@
                                 <color key="textColor" red="1" green="0.67199689060000001" blue="0.0961645629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GXO-U5-wJe">
+                                <rect key="frame" x="90" y="672" width="234" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wit-fD-fqq">
+                                        <rect key="frame" x="0.0" y="0.0" width="234" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="qJX-cd-P7s"/>
+                                        </constraints>
+                                        <state key="normal" title="Reserve time slot"/>
+                                        <connections>
+                                            <segue destination="t3d-SI-JiR" kind="show" id="AfN-eF-oaM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QM-79-SGp">
+                                        <rect key="frame" x="0.0" y="60" width="234" height="40"/>
+                                        <state key="normal" title="Cancel time slot"/>
+                                        <connections>
+                                            <segue destination="tkL-rJ-1hs" kind="show" id="8JS-Jw-doZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8QM-79-SGp" firstAttribute="height" secondItem="wit-fD-fqq" secondAttribute="height" id="PKo-wB-YGX"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xll-6n-2fm">
+                                <rect key="frame" x="341" y="44" width="53" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UXp-Ns-hMg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOut:" destination="Ill-t7-4qL" eventType="touchUpInside" id="7q0-jw-S45"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="pag-25-WGL" firstAttribute="leading" secondItem="JuW-J3-B09" secondAttribute="leading" constant="40" id="K55-HA-Wsg"/>
+                            <constraint firstItem="pag-25-WGL" firstAttribute="top" secondItem="Xll-6n-2fm" secondAttribute="bottom" constant="10" id="MRl-ql-UrH"/>
+                            <constraint firstItem="Xll-6n-2fm" firstAttribute="top" secondItem="JuW-J3-B09" secondAttribute="top" id="NaV-QW-zcT"/>
+                            <constraint firstItem="JuW-J3-B09" firstAttribute="trailing" secondItem="Xll-6n-2fm" secondAttribute="trailing" constant="20" id="Qlq-Tx-ysk"/>
+                            <constraint firstItem="GXO-U5-wJe" firstAttribute="leading" secondItem="JuW-J3-B09" secondAttribute="leading" constant="90" id="ekL-g0-ygl"/>
+                            <constraint firstItem="JuW-J3-B09" firstAttribute="trailing" secondItem="GXO-U5-wJe" secondAttribute="trailing" constant="90" id="lnm-Ge-5oH"/>
                             <constraint firstItem="JuW-J3-B09" firstAttribute="trailing" secondItem="pag-25-WGL" secondAttribute="trailing" constant="40" id="pDy-kE-hgo"/>
                             <constraint firstItem="pag-25-WGL" firstAttribute="top" secondItem="JuW-J3-B09" secondAttribute="top" constant="40" id="tuI-s0-31d"/>
+                            <constraint firstItem="JuW-J3-B09" firstAttribute="bottom" secondItem="GXO-U5-wJe" secondAttribute="bottom" constant="90" id="vfU-SV-d8h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JuW-J3-B09"/>
                     </view>
+                    <connections>
+                        <outlet property="cancelTimeSlotButton" destination="8QM-79-SGp" id="qtJ-kV-5ey"/>
+                        <outlet property="reserveTimeSlotButton" destination="wit-fD-fqq" id="0gm-ir-VsI"/>
+                        <outlet property="signOutButton" destination="Xll-6n-2fm" id="5Xx-dy-lcp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHA-dg-njO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1690" y="134"/>
+            <point key="canvasLocation" x="1723" y="134"/>
+        </scene>
+        <!--Reserve Time Slot View Controller-->
+        <scene sceneID="BKh-e3-JdS">
+            <objects>
+                <viewController id="t3d-SI-JiR" customClass="ReserveTimeSlotViewController" customModule="SJSUSRAC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lcw-2v-A6y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reserve a Time Slot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0O6-Ja-P8d">
+                                <rect key="frame" x="40" y="40" width="334" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="0.67199689060000001" blue="0.0961645629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0O6-Ja-P8d" firstAttribute="top" secondItem="XFo-A3-ML2" secondAttribute="top" constant="40" id="Mj4-sW-Yv7"/>
+                            <constraint firstItem="0O6-Ja-P8d" firstAttribute="leading" secondItem="XFo-A3-ML2" secondAttribute="leading" constant="40" id="Z76-4a-1r9"/>
+                            <constraint firstItem="XFo-A3-ML2" firstAttribute="trailing" secondItem="0O6-Ja-P8d" secondAttribute="trailing" constant="40" id="jxK-ay-ciW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XFo-A3-ML2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8e4-f8-PXE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q78-Dv-KFY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2823" y="-185"/>
+        </scene>
+        <!--Cancel Time Slot View Controller-->
+        <scene sceneID="7BP-zd-vTa">
+            <objects>
+                <viewController id="tkL-rJ-1hs" customClass="CancelTimeSlotViewController" customModule="SJSUSRAC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nAN-kK-quD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel Your Time Slot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTN-VE-EpN">
+                                <rect key="frame" x="40" y="40" width="334" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="0.67199689060000001" blue="0.0961645629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PTN-VE-EpN" firstAttribute="leading" secondItem="26A-U9-oQA" secondAttribute="leading" constant="40" id="Pga-dg-YnV"/>
+                            <constraint firstItem="PTN-VE-EpN" firstAttribute="top" secondItem="26A-U9-oQA" secondAttribute="top" constant="40" id="az3-Tc-D17"/>
+                            <constraint firstItem="26A-U9-oQA" firstAttribute="trailing" secondItem="PTN-VE-EpN" secondAttribute="trailing" constant="40" id="xye-Gc-CRh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="26A-U9-oQA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="U8H-qe-n1H"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRV-GK-jfw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2822" y="594"/>
         </scene>
     </scenes>
     <resources>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,8 @@
 		8302286B23665D72002A1F23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8302286A23665D72002A1F23 /* Constants.swift */; };
 		8302286D23666522002A1F23 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8302286C23666522002A1F23 /* HomeViewController.swift */; };
 		8302287123669751002A1F23 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8302287023669751002A1F23 /* GoogleService-Info.plist */; };
+		830228732367A986002A1F23 /* ReserveTimeSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830228722367A986002A1F23 /* ReserveTimeSlotViewController.swift */; };
+		830228772367A9C4002A1F23 /* CancelTimeSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830228762367A9C4002A1F23 /* CancelTimeSlotViewController.swift */; };
 		9860E0FBA66628538383D407 /* Pods_SJSUSRACTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE72F35B2C121D38D890CCA /* Pods_SJSUSRACTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		8302286A23665D72002A1F23 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8302286C23666522002A1F23 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8302287023669751002A1F23 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		830228722367A986002A1F23 /* ReserveTimeSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveTimeSlotViewController.swift; sourceTree = "<group>"; };
+		830228762367A9C4002A1F23 /* CancelTimeSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelTimeSlotViewController.swift; sourceTree = "<group>"; };
 		921AEBE9DFFB7F06F648AB3C /* Pods_SJSUSRAC_SJSUSRACUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJSUSRAC_SJSUSRACUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CED8316C69F13B17944262 /* Pods-SJSUSRAC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSUSRAC.release.xcconfig"; path = "Target Support Files/Pods-SJSUSRAC/Pods-SJSUSRAC.release.xcconfig"; sourceTree = "<group>"; };
 		9B208875FDFB7E47904313EE /* Pods-SJSUSRAC-SJSUSRACUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSUSRAC-SJSUSRACUITests.release.xcconfig"; path = "Target Support Files/Pods-SJSUSRAC-SJSUSRACUITests/Pods-SJSUSRAC-SJSUSRACUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,7 +115,6 @@
 				4F2C77DC85EF542881439BF4 /* Pods-SJSUSRACTests.debug.xcconfig */,
 				E5B0A6151E6C218984674C18 /* Pods-SJSUSRACTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -185,6 +188,8 @@
 				8302283723665B5B002A1F23 /* ViewController.swift */,
 				8302286423665D20002A1F23 /* CreateAccountViewController.swift */,
 				8302286C23666522002A1F23 /* HomeViewController.swift */,
+				830228722367A986002A1F23 /* ReserveTimeSlotViewController.swift */,
+				830228762367A9C4002A1F23 /* CancelTimeSlotViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -450,9 +455,11 @@
 			files = (
 				8302286523665D20002A1F23 /* CreateAccountViewController.swift in Sources */,
 				8302283823665B5B002A1F23 /* ViewController.swift in Sources */,
+				830228732367A986002A1F23 /* ReserveTimeSlotViewController.swift in Sources */,
 				8302283423665B5B002A1F23 /* AppDelegate.swift in Sources */,
 				8302286923665D67002A1F23 /* Utilities.swift in Sources */,
 				8302283623665B5B002A1F23 /* SceneDelegate.swift in Sources */,
+				830228772367A9C4002A1F23 /* CancelTimeSlotViewController.swift in Sources */,
 				8302286D23666522002A1F23 /* HomeViewController.swift in Sources */,
 				8302286B23665D72002A1F23 /* Constants.swift in Sources */,
 			);

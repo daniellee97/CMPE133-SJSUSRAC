@@ -40,6 +40,12 @@ class Utilities {
         button.tintColor = UIColor.black
     }
     
+    static func differentStyleFilledButton (_ button: UIButton) {
+        button.backgroundColor = #colorLiteral(red: 0.3241341114, green: 0.4266013503, blue: 0.9863418937, alpha: 1)
+        button.layer.cornerRadius = 15.0
+        button.tintColor = UIColor.white
+    }
+    
     static func isPasswordValid(_ password : String) -> Bool {
         let testing = NSPredicate(format: "Self Matches %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return testing.evaluate(with: password)
