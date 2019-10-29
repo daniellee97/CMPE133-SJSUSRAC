@@ -10,21 +10,28 @@ import UIKit
 
 class ReserveTimeSlotViewController: UIViewController {
 
+    @IBOutlet weak var confirmButton: UIButton!
+    
+    @IBAction func confirmButtonTapped(_ sender: Any) {
+        transitionToHomePage()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setElements()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func transitionToHomePage() {
+        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.HomeViewController) as? HomeViewController
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
     }
-    */
+    
+    private func setElements() {
+        Utilities.styleFilledButton(confirmButton)
+    }
 
+    
 }

@@ -313,16 +313,32 @@
                                 <color key="textColor" red="1" green="0.67199689060000001" blue="0.0961645629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrt-cN-qO9">
+                                <rect key="frame" x="40" y="728" width="334" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HDB-fT-qli"/>
+                                </constraints>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmButtonTapped:" destination="t3d-SI-JiR" eventType="touchUpInside" id="aCt-Be-sr9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="0O6-Ja-P8d" firstAttribute="top" secondItem="XFo-A3-ML2" secondAttribute="top" constant="40" id="Mj4-sW-Yv7"/>
                             <constraint firstItem="0O6-Ja-P8d" firstAttribute="leading" secondItem="XFo-A3-ML2" secondAttribute="leading" constant="40" id="Z76-4a-1r9"/>
+                            <constraint firstItem="XFo-A3-ML2" firstAttribute="trailing" secondItem="lrt-cN-qO9" secondAttribute="trailing" constant="40" id="bCD-tl-pho"/>
                             <constraint firstItem="XFo-A3-ML2" firstAttribute="trailing" secondItem="0O6-Ja-P8d" secondAttribute="trailing" constant="40" id="jxK-ay-ciW"/>
+                            <constraint firstItem="lrt-cN-qO9" firstAttribute="leading" secondItem="XFo-A3-ML2" secondAttribute="leading" constant="40" id="mHR-eQ-5bz"/>
+                            <constraint firstItem="XFo-A3-ML2" firstAttribute="bottom" secondItem="lrt-cN-qO9" secondAttribute="bottom" constant="40" id="tF4-df-jtp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XFo-A3-ML2"/>
                     </view>
                     <navigationItem key="navigationItem" id="8e4-f8-PXE"/>
+                    <connections>
+                        <outlet property="confirmButton" destination="lrt-cN-qO9" id="vqe-wt-T5W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q78-Dv-KFY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -342,9 +358,33 @@
                                 <color key="textColor" red="1" green="0.67199689060000001" blue="0.0961645629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="tgd-81-ATE">
+                                <rect key="frame" x="40" y="664" width="334" height="94"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check the box and click Confirm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJ8-n5-oJ1">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="1" green="0.67199689060000001" blue="0.0961645629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9a-3a-308">
+                                        <rect key="frame" x="0.0" y="54" width="334" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="1Lg-9h-g41"/>
+                                        </constraints>
+                                        <state key="normal" title="Confirm"/>
+                                        <connections>
+                                            <action selector="confirmButtonTapped:" destination="tkL-rJ-1hs" eventType="touchUpInside" id="11E-j8-r1Y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="tgd-81-ATE" firstAttribute="leading" secondItem="26A-U9-oQA" secondAttribute="leading" constant="40" id="6cN-8X-ztV"/>
+                            <constraint firstItem="26A-U9-oQA" firstAttribute="bottom" secondItem="tgd-81-ATE" secondAttribute="bottom" constant="50" id="DYc-1t-QmE"/>
+                            <constraint firstItem="26A-U9-oQA" firstAttribute="trailing" secondItem="tgd-81-ATE" secondAttribute="trailing" constant="40" id="Pav-93-659"/>
                             <constraint firstItem="PTN-VE-EpN" firstAttribute="leading" secondItem="26A-U9-oQA" secondAttribute="leading" constant="40" id="Pga-dg-YnV"/>
                             <constraint firstItem="PTN-VE-EpN" firstAttribute="top" secondItem="26A-U9-oQA" secondAttribute="top" constant="40" id="az3-Tc-D17"/>
                             <constraint firstItem="26A-U9-oQA" firstAttribute="trailing" secondItem="PTN-VE-EpN" secondAttribute="trailing" constant="40" id="xye-Gc-CRh"/>
@@ -352,6 +392,9 @@
                         <viewLayoutGuide key="safeArea" id="26A-U9-oQA"/>
                     </view>
                     <navigationItem key="navigationItem" id="U8H-qe-n1H"/>
+                    <connections>
+                        <outlet property="confirmButton" destination="v9a-3a-308" id="Hdu-Xj-K25"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRV-GK-jfw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
