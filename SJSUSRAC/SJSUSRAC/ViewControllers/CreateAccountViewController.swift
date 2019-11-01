@@ -18,6 +18,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var studentIDTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPassword: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -36,6 +37,7 @@ class CreateAccountViewController: UIViewController {
         Utilities.styleTextField(studentIDTextField)
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
+        Utilities.styleTextField(confirmPassword)
         Utilities.styleFilledButton(signUpButton)
     }
     
@@ -43,14 +45,19 @@ class CreateAccountViewController: UIViewController {
     private func validateTextFields() -> String? {
         
         // check if textfields are all filled
-        if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+        if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || confirmPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return "Please fill in required fields"
         }
         
         // check if the password met the requirements
         let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedConfirmPassword = confirmPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         if !Utilities.isPasswordValid(cleanedPassword) {
             return "Please, make sure your password is at least 8 characters, containing letter, number and special character"
+        }
+        
+        if cleanedPassword != cleanedConfirmPassword {
+            return "Your passwords do not match!"
         }
         
         return nil
@@ -92,13 +99,13 @@ class CreateAccountViewController: UIViewController {
             }
             
             //transition to home screen
-            transitionToHomePage()
+            transitionToFirstPage()
         }
     }
     
-    private func transitionToHomePage() {
-        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.HomeViewController) as? HomeViewController
-        view.window?.rootViewController = homeViewController
+    private func transitionToFirstPage() {
+        let firstPageViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.FirstPageController) as? ViewController
+        view.window?.rootViewController = firstPageViewController
         view.window?.makeKeyAndVisible()
     }
     
