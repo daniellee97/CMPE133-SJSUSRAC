@@ -10,7 +10,6 @@
 		2B3C0DAEEA8384D56E993CE8 /* Pods_SJSUSRAC_SJSUSRACUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921AEBE9DFFB7F06F648AB3C /* Pods_SJSUSRAC_SJSUSRACUITests.framework */; };
 		7F3210E8D988D82C97D275A0 /* Pods_SJSUSRAC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1119D2F909300A3C01178B95 /* Pods_SJSUSRAC.framework */; };
 		8302283423665B5B002A1F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8302283323665B5B002A1F23 /* AppDelegate.swift */; };
-		8302283623665B5B002A1F23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8302283523665B5B002A1F23 /* SceneDelegate.swift */; };
 		8302283823665B5B002A1F23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8302283723665B5B002A1F23 /* ViewController.swift */; };
 		8302283B23665B5B002A1F23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8302283923665B5B002A1F23 /* Main.storyboard */; };
 		8302283D23665B5C002A1F23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8302283C23665B5C002A1F23 /* Assets.xcassets */; };
@@ -24,6 +23,8 @@
 		8302287123669751002A1F23 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8302287023669751002A1F23 /* GoogleService-Info.plist */; };
 		830228732367A986002A1F23 /* ReserveTimeSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830228722367A986002A1F23 /* ReserveTimeSlotViewController.swift */; };
 		830228772367A9C4002A1F23 /* CancelTimeSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830228762367A9C4002A1F23 /* CancelTimeSlotViewController.swift */; };
+		8341302E23681F10005046DB /* BusyHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8341302D23681F10005046DB /* BusyHours.swift */; };
+		83BBA66723681AAC00A77D47 /* MacawChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBA66623681AAC00A77D47 /* MacawChartView.swift */; };
 		9860E0FBA66628538383D407 /* Pods_SJSUSRACTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE72F35B2C121D38D890CCA /* Pods_SJSUSRACTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +51,6 @@
 		4F2C77DC85EF542881439BF4 /* Pods-SJSUSRACTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSUSRACTests.debug.xcconfig"; path = "Target Support Files/Pods-SJSUSRACTests/Pods-SJSUSRACTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8302283023665B5B002A1F23 /* SJSUSRAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SJSUSRAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8302283323665B5B002A1F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8302283523665B5B002A1F23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8302283723665B5B002A1F23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8302283A23665B5B002A1F23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8302283C23665B5C002A1F23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +69,8 @@
 		8302287023669751002A1F23 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		830228722367A986002A1F23 /* ReserveTimeSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveTimeSlotViewController.swift; sourceTree = "<group>"; };
 		830228762367A9C4002A1F23 /* CancelTimeSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelTimeSlotViewController.swift; sourceTree = "<group>"; };
+		8341302D23681F10005046DB /* BusyHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyHours.swift; sourceTree = "<group>"; };
+		83BBA66623681AAC00A77D47 /* MacawChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacawChartView.swift; sourceTree = "<group>"; };
 		921AEBE9DFFB7F06F648AB3C /* Pods_SJSUSRAC_SJSUSRACUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJSUSRAC_SJSUSRACUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CED8316C69F13B17944262 /* Pods-SJSUSRAC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSUSRAC.release.xcconfig"; path = "Target Support Files/Pods-SJSUSRAC/Pods-SJSUSRAC.release.xcconfig"; sourceTree = "<group>"; };
 		9B208875FDFB7E47904313EE /* Pods-SJSUSRAC-SJSUSRACUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSUSRAC-SJSUSRACUITests.release.xcconfig"; path = "Target Support Files/Pods-SJSUSRAC-SJSUSRACUITests/Pods-SJSUSRAC-SJSUSRACUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,10 +148,12 @@
 				8302286323665C32002A1F23 /* SupportingFiles */,
 				8302286623665D2B002A1F23 /* ViewControllers */,
 				8302286723665D4B002A1F23 /* Helpers */,
-				8302283923665B5B002A1F23 /* Main.storyboard */,
-				8302283E23665B5C002A1F23 /* LaunchScreen.storyboard */,
 				8302287023669751002A1F23 /* GoogleService-Info.plist */,
 				8302284123665B5C002A1F23 /* Info.plist */,
+				83BBA66623681AAC00A77D47 /* MacawChartView.swift */,
+				8341302D23681F10005046DB /* BusyHours.swift */,
+				8302283923665B5B002A1F23 /* Main.storyboard */,
+				8302283E23665B5C002A1F23 /* LaunchScreen.storyboard */,
 			);
 			path = SJSUSRAC;
 			sourceTree = "<group>";
@@ -175,7 +179,6 @@
 		8302286323665C32002A1F23 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				8302283523665B5B002A1F23 /* SceneDelegate.swift */,
 				8302283323665B5B002A1F23 /* AppDelegate.swift */,
 				8302283C23665B5C002A1F23 /* Assets.xcassets */,
 			);
@@ -454,11 +457,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8302286523665D20002A1F23 /* CreateAccountViewController.swift in Sources */,
+				83BBA66723681AAC00A77D47 /* MacawChartView.swift in Sources */,
 				8302283823665B5B002A1F23 /* ViewController.swift in Sources */,
 				830228732367A986002A1F23 /* ReserveTimeSlotViewController.swift in Sources */,
 				8302283423665B5B002A1F23 /* AppDelegate.swift in Sources */,
+				8341302E23681F10005046DB /* BusyHours.swift in Sources */,
 				8302286923665D67002A1F23 /* Utilities.swift in Sources */,
-				8302283623665B5B002A1F23 /* SceneDelegate.swift in Sources */,
 				830228772367A9C4002A1F23 /* CancelTimeSlotViewController.swift in Sources */,
 				8302286D23666522002A1F23 /* HomeViewController.swift in Sources */,
 				8302286B23665D72002A1F23 /* Constants.swift in Sources */,
@@ -638,6 +642,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XAALS7WM3B;
 				INFOPLIST_FILE = SJSUSRAC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -657,6 +662,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XAALS7WM3B;
 				INFOPLIST_FILE = SJSUSRAC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

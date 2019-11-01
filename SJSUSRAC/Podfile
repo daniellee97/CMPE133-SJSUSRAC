@@ -12,6 +12,7 @@ target 'SJSUSRAC' do
     pod 'Firebase/Auth'
     pod 'Firebase/Core'
     pod 'Firebase/Firestore'
+    pod "Macaw", "0.9.5"
 
   target 'SJSUSRACTests' do
     inherit! :search_paths

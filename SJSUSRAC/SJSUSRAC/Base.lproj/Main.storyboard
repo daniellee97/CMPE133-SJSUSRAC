@@ -129,7 +129,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LWk-3d-dtZ">
-                                <rect key="frame" x="40" y="218" width="334" height="280"/>
+                                <rect key="frame" x="40" y="218" width="334" height="334"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3U3-Nb-5PW">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -156,6 +156,11 @@
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGn-WU-79u">
                                         <rect key="frame" x="0.0" y="240" width="334" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s7q-Wq-oaY">
+                                        <rect key="frame" x="0.0" y="300" width="334" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -233,7 +238,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Busy Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pag-25-WGL">
-                                <rect key="frame" x="40" y="84" width="334" height="30"/>
+                                <rect key="frame" x="40" y="84" width="334" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="0.67199689060000001" blue="0.0961645629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -274,18 +279,30 @@
                                     <action selector="signOut:" destination="Ill-t7-4qL" eventType="touchUpInside" id="7q0-jw-S45"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6VM-EO-TjT">
+                                <rect key="frame" x="20" y="261" width="374" height="374"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6VM-EO-TjT" secondAttribute="height" multiplier="1:1" id="A1L-1d-Nto"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6VM-EO-TjT" firstAttribute="centerY" secondItem="1nZ-hd-eOY" secondAttribute="centerY" id="Bqp-Ns-iua"/>
                             <constraint firstItem="pag-25-WGL" firstAttribute="leading" secondItem="JuW-J3-B09" secondAttribute="leading" constant="40" id="K55-HA-Wsg"/>
+                            <constraint firstItem="JuW-J3-B09" firstAttribute="trailing" secondItem="6VM-EO-TjT" secondAttribute="trailing" constant="20" id="M6d-1k-vBb"/>
                             <constraint firstItem="pag-25-WGL" firstAttribute="top" secondItem="Xll-6n-2fm" secondAttribute="bottom" constant="10" id="MRl-ql-UrH"/>
                             <constraint firstItem="Xll-6n-2fm" firstAttribute="top" secondItem="JuW-J3-B09" secondAttribute="top" id="NaV-QW-zcT"/>
                             <constraint firstItem="JuW-J3-B09" firstAttribute="trailing" secondItem="Xll-6n-2fm" secondAttribute="trailing" constant="20" id="Qlq-Tx-ysk"/>
                             <constraint firstItem="GXO-U5-wJe" firstAttribute="leading" secondItem="JuW-J3-B09" secondAttribute="leading" constant="90" id="ekL-g0-ygl"/>
                             <constraint firstItem="JuW-J3-B09" firstAttribute="trailing" secondItem="GXO-U5-wJe" secondAttribute="trailing" constant="90" id="lnm-Ge-5oH"/>
+                            <constraint firstItem="6VM-EO-TjT" firstAttribute="top" secondItem="pag-25-WGL" secondAttribute="bottom" constant="150" id="ogR-9K-tm4"/>
                             <constraint firstItem="JuW-J3-B09" firstAttribute="trailing" secondItem="pag-25-WGL" secondAttribute="trailing" constant="40" id="pDy-kE-hgo"/>
                             <constraint firstItem="pag-25-WGL" firstAttribute="top" secondItem="JuW-J3-B09" secondAttribute="top" constant="40" id="tuI-s0-31d"/>
+                            <constraint firstItem="6VM-EO-TjT" firstAttribute="centerX" secondItem="1nZ-hd-eOY" secondAttribute="centerX" id="uF4-in-iD2"/>
                             <constraint firstItem="JuW-J3-B09" firstAttribute="bottom" secondItem="GXO-U5-wJe" secondAttribute="bottom" constant="90" id="vfU-SV-d8h"/>
+                            <constraint firstItem="6VM-EO-TjT" firstAttribute="leading" secondItem="JuW-J3-B09" secondAttribute="leading" constant="20" id="zvJ-41-HRe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JuW-J3-B09"/>
                     </view>
