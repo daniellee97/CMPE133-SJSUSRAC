@@ -14,7 +14,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var reserveTimeSlotButton: UIButton!
     @IBOutlet weak var cancelTimeSlotButton: UIButton!
     @IBOutlet weak var signOutButton: UIButton!
-
+    @IBOutlet weak var busyHoursChart: UIView!
+    
     
     @IBAction func signOut(_ sender: Any) {
         transitionToFirstPage()
@@ -22,8 +23,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        busyHoursChart.contentMode = .scaleAspectFit
         // Do any additional setup after loading the view.
+        MacawChartView.playAnimation()
         setElements()
     }
     
