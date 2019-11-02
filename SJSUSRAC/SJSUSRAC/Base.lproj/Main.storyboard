@@ -342,45 +342,43 @@
                                     <action selector="confirmButtonTapped:" destination="t3d-SI-JiR" eventType="touchUpInside" id="aCt-Be-sr9"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="pQv-O6-cXU">
-                                <rect key="frame" x="60" y="190" width="294" height="130"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xr1-Pt-HI2">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="zZC-Cg-eeT"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Select the date"/>
-                                        <connections>
-                                            <action selector="dateButtonTapped:" destination="t3d-SI-JiR" eventType="touchUpInside" id="mmA-NC-vwf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtE-sT-VUi">
-                                        <rect key="frame" x="0.0" y="90" width="294" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Select the time"/>
-                                        <connections>
-                                            <action selector="timeButtonTapped:" destination="t3d-SI-JiR" eventType="touchUpInside" id="XUl-7e-63I"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xr1-Pt-HI2">
+                                <rect key="frame" x="40" y="150" width="334" height="40"/>
                                 <constraints>
-                                    <constraint firstItem="mtE-sT-VUi" firstAttribute="height" secondItem="xr1-Pt-HI2" secondAttribute="height" id="typ-gW-Q1Y"/>
+                                    <constraint firstAttribute="height" constant="40" id="zZC-Cg-eeT"/>
                                 </constraints>
-                            </stackView>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Select the date"/>
+                                <connections>
+                                    <action selector="dateButtonTapped:" destination="t3d-SI-JiR" eventType="touchUpInside" id="mmA-NC-vwf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtE-sT-VUi">
+                                <rect key="frame" x="40" y="270" width="334" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bAU-bj-qsm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Select the time"/>
+                                <connections>
+                                    <action selector="timeButtonTapped:" destination="t3d-SI-JiR" eventType="touchUpInside" id="XUl-7e-63I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="pQv-O6-cXU" firstAttribute="top" secondItem="0O6-Ja-P8d" secondAttribute="bottom" constant="120" id="1Qw-Cm-HSa"/>
-                            <constraint firstItem="pQv-O6-cXU" firstAttribute="leading" secondItem="XFo-A3-ML2" secondAttribute="leading" constant="60" id="5NG-VT-H6p"/>
+                            <constraint firstItem="mtE-sT-VUi" firstAttribute="top" secondItem="xr1-Pt-HI2" secondAttribute="bottom" constant="80" id="LQ7-qk-hdk"/>
                             <constraint firstItem="0O6-Ja-P8d" firstAttribute="top" secondItem="XFo-A3-ML2" secondAttribute="top" constant="40" id="Mj4-sW-Yv7"/>
+                            <constraint firstItem="XFo-A3-ML2" firstAttribute="trailing" secondItem="xr1-Pt-HI2" secondAttribute="trailing" constant="40" id="NkZ-po-OUA"/>
                             <constraint firstItem="0O6-Ja-P8d" firstAttribute="leading" secondItem="XFo-A3-ML2" secondAttribute="leading" constant="40" id="Z76-4a-1r9"/>
                             <constraint firstItem="XFo-A3-ML2" firstAttribute="trailing" secondItem="lrt-cN-qO9" secondAttribute="trailing" constant="40" id="bCD-tl-pho"/>
-                            <constraint firstItem="XFo-A3-ML2" firstAttribute="trailing" secondItem="pQv-O6-cXU" secondAttribute="trailing" constant="60" id="bOn-hK-ufX"/>
+                            <constraint firstItem="xr1-Pt-HI2" firstAttribute="top" secondItem="0O6-Ja-P8d" secondAttribute="bottom" constant="80" id="gxI-3C-Aoj"/>
                             <constraint firstItem="XFo-A3-ML2" firstAttribute="trailing" secondItem="0O6-Ja-P8d" secondAttribute="trailing" constant="40" id="jxK-ay-ciW"/>
                             <constraint firstItem="lrt-cN-qO9" firstAttribute="leading" secondItem="XFo-A3-ML2" secondAttribute="leading" constant="40" id="mHR-eQ-5bz"/>
                             <constraint firstItem="XFo-A3-ML2" firstAttribute="bottom" secondItem="lrt-cN-qO9" secondAttribute="bottom" constant="40" id="tF4-df-jtp"/>
+                            <constraint firstItem="XFo-A3-ML2" firstAttribute="trailing" secondItem="mtE-sT-VUi" secondAttribute="trailing" constant="40" id="vPP-dg-zPl"/>
+                            <constraint firstItem="mtE-sT-VUi" firstAttribute="leading" secondItem="XFo-A3-ML2" secondAttribute="leading" constant="40" id="wWZ-Sq-v7K"/>
+                            <constraint firstItem="xr1-Pt-HI2" firstAttribute="leading" secondItem="XFo-A3-ML2" secondAttribute="leading" constant="40" id="xCC-gG-Ugj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XFo-A3-ML2"/>
                     </view>
