@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lvf-UR-98m">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -129,7 +130,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LWk-3d-dtZ">
-                                <rect key="frame" x="40" y="218" width="334" height="334"/>
+                                <rect key="frame" x="40" y="218" width="334" height="340"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3U3-Nb-5PW">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -157,15 +158,16 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGn-WU-79u">
                                         <rect key="frame" x="0.0" y="240" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s7q-Wq-oaY">
-                                        <rect key="frame" x="0.0" y="300" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="300" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="s7q-Wq-oaY" firstAttribute="height" secondItem="3U3-Nb-5PW" secondAttribute="height" id="JX2-EQ-hdH"/>
                                     <constraint firstItem="vcU-8M-YfT" firstAttribute="height" secondItem="3U3-Nb-5PW" secondAttribute="height" id="NVP-SS-Lhx"/>
                                     <constraint firstItem="tfS-9N-hxy" firstAttribute="height" secondItem="3U3-Nb-5PW" secondAttribute="height" id="bg2-M6-dst"/>
                                     <constraint firstItem="hGn-WU-79u" firstAttribute="height" secondItem="3U3-Nb-5PW" secondAttribute="height" id="d0w-hc-85V"/>
@@ -340,12 +342,42 @@
                                     <action selector="confirmButtonTapped:" destination="t3d-SI-JiR" eventType="touchUpInside" id="aCt-Be-sr9"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="pQv-O6-cXU">
+                                <rect key="frame" x="60" y="190" width="294" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xr1-Pt-HI2">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="zZC-Cg-eeT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Select the date"/>
+                                        <connections>
+                                            <action selector="dateButtonTapped:" destination="t3d-SI-JiR" eventType="touchUpInside" id="mmA-NC-vwf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtE-sT-VUi">
+                                        <rect key="frame" x="0.0" y="90" width="294" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Select the time"/>
+                                        <connections>
+                                            <action selector="timeButtonTapped:" destination="t3d-SI-JiR" eventType="touchUpInside" id="XUl-7e-63I"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mtE-sT-VUi" firstAttribute="height" secondItem="xr1-Pt-HI2" secondAttribute="height" id="typ-gW-Q1Y"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="pQv-O6-cXU" firstAttribute="top" secondItem="0O6-Ja-P8d" secondAttribute="bottom" constant="120" id="1Qw-Cm-HSa"/>
+                            <constraint firstItem="pQv-O6-cXU" firstAttribute="leading" secondItem="XFo-A3-ML2" secondAttribute="leading" constant="60" id="5NG-VT-H6p"/>
                             <constraint firstItem="0O6-Ja-P8d" firstAttribute="top" secondItem="XFo-A3-ML2" secondAttribute="top" constant="40" id="Mj4-sW-Yv7"/>
                             <constraint firstItem="0O6-Ja-P8d" firstAttribute="leading" secondItem="XFo-A3-ML2" secondAttribute="leading" constant="40" id="Z76-4a-1r9"/>
                             <constraint firstItem="XFo-A3-ML2" firstAttribute="trailing" secondItem="lrt-cN-qO9" secondAttribute="trailing" constant="40" id="bCD-tl-pho"/>
+                            <constraint firstItem="XFo-A3-ML2" firstAttribute="trailing" secondItem="pQv-O6-cXU" secondAttribute="trailing" constant="60" id="bOn-hK-ufX"/>
                             <constraint firstItem="XFo-A3-ML2" firstAttribute="trailing" secondItem="0O6-Ja-P8d" secondAttribute="trailing" constant="40" id="jxK-ay-ciW"/>
                             <constraint firstItem="lrt-cN-qO9" firstAttribute="leading" secondItem="XFo-A3-ML2" secondAttribute="leading" constant="40" id="mHR-eQ-5bz"/>
                             <constraint firstItem="XFo-A3-ML2" firstAttribute="bottom" secondItem="lrt-cN-qO9" secondAttribute="bottom" constant="40" id="tF4-df-jtp"/>
@@ -355,6 +387,8 @@
                     <navigationItem key="navigationItem" id="8e4-f8-PXE"/>
                     <connections>
                         <outlet property="confirmButton" destination="lrt-cN-qO9" id="vqe-wt-T5W"/>
+                        <outlet property="selectDateButton" destination="xr1-Pt-HI2" id="WoX-OO-b6A"/>
+                        <outlet property="selectTimeButton" destination="mtE-sT-VUi" id="qjj-9I-S6C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q78-Dv-KFY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

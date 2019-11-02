@@ -10,10 +10,27 @@ import UIKit
 
 class ReserveTimeSlotViewController: UIViewController {
 
+    @IBOutlet weak var selectDateButton: UIButton!
+    @IBOutlet weak var selectTimeButton: UIButton!
     @IBOutlet weak var confirmButton: UIButton!
+    
+    let transparentView = UIView()
+    
+    private func addTransparentView() {
+        let window = UIApplication.shared.keyWindow
+        transparentView.frame = window?.frame ?? self.view.frame
+    }
     
     @IBAction func confirmButtonTapped(_ sender: Any) {
         transitionToHomePage()
+    }
+    
+    @IBAction private func dateButtonTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction private func timeButtonTapped(_ sender: Any) {
+        
     }
     
     override func viewDidLoad() {
