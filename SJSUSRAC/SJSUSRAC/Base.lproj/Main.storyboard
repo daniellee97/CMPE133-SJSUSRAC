@@ -281,7 +281,7 @@
                                     <action selector="signOut:" destination="Ill-t7-4qL" eventType="touchUpInside" id="7q0-jw-S45"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6VM-EO-TjT">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6VM-EO-TjT" customClass="MacawChartView" customModule="SJSUSRAC" customModuleProvider="target">
                                 <rect key="frame" x="20" y="261" width="374" height="374"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -309,6 +309,7 @@
                         <viewLayoutGuide key="safeArea" id="JuW-J3-B09"/>
                     </view>
                     <connections>
+                        <outlet property="busyHoursChart" destination="6VM-EO-TjT" id="Egu-nR-U9M"/>
                         <outlet property="cancelTimeSlotButton" destination="8QM-79-SGp" id="qtJ-kV-5ey"/>
                         <outlet property="reserveTimeSlotButton" destination="wit-fD-fqq" id="0gm-ir-VsI"/>
                         <outlet property="signOutButton" destination="Xll-6n-2fm" id="5Xx-dy-lcp"/>

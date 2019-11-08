@@ -9,6 +9,6 @@
 import Foundation
 
 struct BusyHours {
-    var hours: Double
+    var hours: String
     var numberOfVisitors: Double
 }
