@@ -57,6 +57,10 @@ class ReserveTimeSlotViewController: UIViewController {
         transitionToHomePage()
     }
     
+    private func createTimeTable() {
+        
+    }
+    
     @IBAction private func dateButtonTapped(_ sender: Any) {
         dataSource = ["11/01/19", "11/02/19", "11/03/19"]
         selectedButton = selectDateButton
