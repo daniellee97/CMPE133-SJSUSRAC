@@ -62,14 +62,14 @@ class ReserveTimeSlotViewController: UIViewController {
     }
     
     @IBAction private func dateButtonTapped(_ sender: Any) {
-        dataSource = ["11/01/19", "11/02/19", "11/03/19"]
+        dataSource = ["11/14/19", "11/15/19", "11/16/19"]
         selectedButton = selectDateButton
         addTransparentView(frames: selectDateButton.frame)
         
     }
     
     @IBAction private func timeButtonTapped(_ sender: Any) {
-        dataSource = ["6:00", "7:00", "8:00"]
+        dataSource = ["6:00", "7:00", "8:00", "9:00", "10:00"]
         selectedButton = selectTimeButton
         addTransparentView(frames: selectTimeButton.frame)
     }

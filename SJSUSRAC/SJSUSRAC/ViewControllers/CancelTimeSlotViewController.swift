@@ -11,6 +11,9 @@ import UIKit
 class CancelTimeSlotViewController: UIViewController {
 
     @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var firstCancelButton: UIButton!
+    @IBOutlet weak var secondCancelButton: UIButton!
+    @IBOutlet weak var thirdCancelButton: UIButton!
     
     @IBAction func confirmButtonTapped(_ sender: Any) {
         transitionToHomePage()
@@ -31,5 +34,8 @@ class CancelTimeSlotViewController: UIViewController {
 
     private func setElements() {
         Utilities.styleFilledButton(confirmButton)
+        Utilities.differentStyleFilledButton(firstCancelButton)
+        Utilities.differentStyleFilledButton(secondCancelButton)
+        Utilities.differentStyleFilledButton(thirdCancelButton)
     }
 }
