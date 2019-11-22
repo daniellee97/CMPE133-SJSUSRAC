@@ -3,7 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -304,6 +304,9 @@
                                     <constraint firstAttribute="height" constant="40" id="KHB-aN-Khp"/>
                                 </constraints>
                                 <state key="normal" title="Check-In"/>
+                                <connections>
+                                    <action selector="checkInButtonTapped:" destination="Ill-t7-4qL" eventType="touchUpInside" id="8Sf-RW-xpf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zot-Q2-GHZ">
                                 <rect key="frame" x="224" y="635" width="100" height="40"/>

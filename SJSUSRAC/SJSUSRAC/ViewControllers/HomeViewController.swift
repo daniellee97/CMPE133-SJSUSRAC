@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
 
@@ -30,6 +31,9 @@ class HomeViewController: UIViewController {
         transitionToFirstPage()
     }
     
+    @IBAction func checkInButtonTapped(_ sender: Any) {
+        confirmCheckIn()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         busyHoursChart.contentMode = .scaleAspectFit
@@ -52,6 +56,31 @@ class HomeViewController: UIViewController {
         Utilities.styleFilledButton(signOutButton)
         Utilities.styleFilledButton(checkInButton)
         Utilities.styleFilledButton(scanQRCodeButton)
+    }
+    
+    private func confirmCheckIn() {
+        let alertController = UIAlertController(title: "Confirm check in", message: "Check in?", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            let db = Firestore.firestore()
+            let timeStamp = [ "timeStamp:": Timestamp(date: Date())]
+            db.collection("checkin").addDocument(data: timeStamp) { err in
+                if let err = err {
+                    print("error writing document: \(err)")
+                } else {
+                    print("Document successfully written")
+                }
+                
+            }
+            
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default) {
+            UIAlertAction in print("cancelled")
+        }
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 
 
