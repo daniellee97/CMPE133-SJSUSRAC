@@ -7,80 +7,131 @@
 //
 
 import UIKit
-
-class CellClass: UITableViewCell {
-    
-}
+import Firebase
 
 class ReserveTimeSlotViewController: UIViewController {
 
     @IBOutlet weak var selectDateButton: UIButton!
     @IBOutlet weak var selectTimeButton: UIButton!
     @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var dateTblView: UITableView!
+    @IBOutlet weak var timeTblView: UITableView!
     
-    let transparentView = UIView()
-    let tableView = UITableView()
+    
+    
     var selectedButton = UIButton()
-    
-    var dataSource = [String]()
-    
-   func addTransparentView(frames: CGRect) {
-       let window = UIApplication.shared.keyWindow
-       transparentView.frame = window?.frame ?? self.view.frame
-       self.view.addSubview(transparentView)
-       
-       tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height, width: frames.width, height: 0)
-       self.view.addSubview(tableView)
-       tableView.layer.cornerRadius = 5
-       
-       transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.9)
-       tableView.reloadData()
-       let tapgesture = UITapGestureRecognizer(target: self, action: #selector(removeTransparentView))
-       transparentView.addGestureRecognizer(tapgesture)
-       transparentView.alpha = 0
-       UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
-           self.transparentView.alpha = 0.5
-           self.tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height + 5, width: frames.width, height: CGFloat(self.dataSource.count * 50))
-       }, completion: nil)
-   }
-   
-   @objc func removeTransparentView() {
-       let frames = selectedButton.frame
-       UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
-           self.transparentView.alpha = 0
-           self.tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height, width: frames.width, height: 0)
-       }, completion: nil)
-   }
-
+    var reservedTime = [String:String]()
+    var reservationChart = [String:Any]()
+    var timeAlreadyLoaded = false
+    var dateSource = ["Today", "Tomorrow"]
+    var timeSource = [String]()
     
     @IBAction func confirmButtonTapped(_ sender: Any) {
-        transitionToHomePage()
-    }
-    
-    private func createTimeTable() {
-        
+        reservedTime = [selectDateButton.titleLabel!.text!:selectTimeButton.titleLabel!.text!]
+        print(reservedTime)
+        updateReservationChart()
     }
     
     @IBAction private func dateButtonTapped(_ sender: Any) {
-        dataSource = ["11/14/19", "11/15/19", "11/16/19"]
+        if dateTblView.isHidden {
+            animate(view: dateTblView, toggle: true)
+            timeAlreadyLoaded = false
+        } else {
+            animate(view: dateTblView, toggle: false)
+        }
         selectedButton = selectDateButton
-        addTransparentView(frames: selectDateButton.frame)
-        
     }
     
     @IBAction private func timeButtonTapped(_ sender: Any) {
-        dataSource = ["6:00", "7:00", "8:00", "9:00", "10:00"]
+        
+        if timeAlreadyLoaded == false {
+            timeSource = [String]()
+            
+            // check if the user selects the date first
+            if selectDateButton.titleLabel?.text == "Select the date" {
+                self.timeSource = ["Select date first!"]
+            } else {
+                let timeReference = Firestore.firestore().collection("reservation_chart")
+                timeReference.addSnapshotListener { (snapshot, _) in
+                    guard let snapshot = snapshot else { return }
+                    let doc = snapshot.documents
+                    var dic = doc[0].data()
+                    if self.selectDateButton.titleLabel?.text == "Tomorrow" {
+                        dic = doc[1].data()
+                    }
+                    self.reservationChart = dic
+                    for (time, bool) in dic{
+                        if let availability = bool as? Bool, availability==true {
+                            self.timeSource.append(time)
+                        }
+                    }
+                    self.timeSource.sort()
+                }
+            }
+            timeAlreadyLoaded = true
+        }
+        
+        timeTblView.reloadData()
+        
+        // show and hide drop down menu
+        if timeTblView.isHidden {
+            animate(view: timeTblView, toggle: true)
+        } else {
+            animate(view: timeTblView, toggle: false)
+        }
         selectedButton = selectTimeButton
-        addTransparentView(frames: selectTimeButton.frame)
+    }
+    
+    private func animate(view: UITableView, toggle: Bool) {
+        switch view{
+        case dateTblView:
+            if toggle {
+                UIView.animate(withDuration: 0.3) {
+                    self.dateTblView.isHidden = false
+                }
+            } else {
+                UIView.animate(withDuration: 0.3) {
+                    self.dateTblView.isHidden = true
+                }
+            }
+        case timeTblView:
+            if toggle {
+                UIView.animate(withDuration: 0.3) {
+                    self.timeTblView.isHidden = false
+                }
+            } else {
+                UIView.animate(withDuration: 0.3) {
+                    self.timeTblView.isHidden = true
+                }
+            }
+        default:
+            print("Nothing")
+        }
+        
+    }
+    
+    private func updateReservationChart() {
+        let timeReference = Firestore.firestore().collection("reservation_chart")
+        reservationChart[reservedTime.first!.value] = false
+        if self.selectDateButton.titleLabel?.text == "Today" {
+            timeReference.document("LjUpSZCIviFeSq3fPCzc").setData(reservationChart)
+            transitionToHomePage()
+        } else if self.selectDateButton.titleLabel?.text == "Tomorrow" {
+            timeReference.document("SIg6q6u9flbtkVWTiPYn").setData(reservationChart)
+            transitionToHomePage()
+        } else {
+            errorLabel.text = "Please fill all area"
+            errorLabel.alpha = 1
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        errorLabel.alpha = 0
         // Do any additional setup after loading the view.
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(CellClass.self, forCellReuseIdentifier: "Cell")
+        dateTblView.isHidden = true
+        timeTblView.isHidden = true
         setElements()
     }
     
@@ -98,24 +149,44 @@ class ReserveTimeSlotViewController: UIViewController {
 
 }
 
-extension ReserveTimeSlotViewController: UITableViewDelegate, UITableViewDataSource {
+extension ReserveTimeSlotViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        var numberOfRows = 0
+        switch tableView {
+        case dateTblView:
+            numberOfRows = dateSource.count
+        case timeTblView:
+            numberOfRows = timeSource.count
+        default:
+            print("Nothing")
+        }
+        return numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = dataSource[indexPath.row]
+        var cell = UITableViewCell()
+        switch tableView{
+        case dateTblView:
+            cell = tableView.dequeueReusableCell(withIdentifier: "dateCell", for: indexPath)
+            cell.textLabel?.text = dateSource[indexPath.row]
+        case timeTblView:
+            cell = tableView.dequeueReusableCell(withIdentifier: "timeCell", for: indexPath)
+            cell.textLabel?.text = timeSource[indexPath.row]
+        default:
+            print("Nothing")
+        }
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedButton == selectDateButton {
+            selectedButton.setTitle(dateSource[indexPath.row], for: .normal)
+            animate(view: dateTblView, toggle: false)
+        } else if selectedButton == selectTimeButton{
+            selectedButton.setTitle(timeSource[indexPath.row], for: .normal)
+            animate(view: timeTblView, toggle: false)
+        }
+        
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedButton.setTitle(dataSource[indexPath.row], for: .normal)
-        removeTransparentView()
-    }
 }
-
