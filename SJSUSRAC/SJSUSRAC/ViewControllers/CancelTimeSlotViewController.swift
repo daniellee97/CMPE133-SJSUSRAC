@@ -24,18 +24,20 @@ class CancelTimeSlotViewController: UIViewController {
     
     @IBAction func firstCancelButtonTapped(_ sender: Any) {
         updateTimeSlot(date: reservedTime.first!.key)
-        updateCurrentUserReservation()
+        createAlert(title: "CONFIRMED", message: "Your reservation got cancelled!")
         if reservedTime.count == 0{
             firstCancelButton.isHidden = true
             firstReservationLabel.alpha = 0
         }
+        updateCurrentUserReservation()
     }
     
     @IBAction func secondCancelButtonTapped(_ sender: Any) {
         updateTimeSlot(date: Array(reservedTime.keys)[1])
-        updateCurrentUserReservation()
+        createAlert(title: "CONFIRMED", message: "Your reservation got cancelled!")
         secondCancelButton.isHidden = true
         secondReservationLabel.alpha = 0
+        updateCurrentUserReservation()
     }
     
     override func viewDidLoad() {
@@ -48,6 +50,15 @@ class CancelTimeSlotViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         setElements()
+    }
+    
+    private func createAlert (title:String, message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+            alert.dismiss(animated: true, completion:nil)
+            self.transitionToHomePage()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     // update time slot for reservation from database and reserved time dictionary
