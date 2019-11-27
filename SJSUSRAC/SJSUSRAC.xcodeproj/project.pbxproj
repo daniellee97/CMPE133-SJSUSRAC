@@ -23,8 +23,8 @@
 		8302287123669751002A1F23 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8302287023669751002A1F23 /* GoogleService-Info.plist */; };
 		830228732367A986002A1F23 /* ReserveTimeSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830228722367A986002A1F23 /* ReserveTimeSlotViewController.swift */; };
 		830228772367A9C4002A1F23 /* CancelTimeSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830228762367A9C4002A1F23 /* CancelTimeSlotViewController.swift */; };
-		8341302E23681F10005046DB /* BusyHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8341302D23681F10005046DB /* BusyHours.swift */; };
-		83BBA66723681AAC00A77D47 /* MacawChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBA66623681AAC00A77D47 /* MacawChartView.swift */; };
+		83A74791238EADDC0080034A /* MacawChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A74790238EADDC0080034A /* MacawChartView.swift */; };
+		83A74793238EAE0A0080034A /* BusyHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A74792238EAE0A0080034A /* BusyHours.swift */; };
 		9860E0FBA66628538383D407 /* Pods_SJSUSRACTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE72F35B2C121D38D890CCA /* Pods_SJSUSRACTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,8 +69,8 @@
 		8302287023669751002A1F23 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		830228722367A986002A1F23 /* ReserveTimeSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveTimeSlotViewController.swift; sourceTree = "<group>"; };
 		830228762367A9C4002A1F23 /* CancelTimeSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelTimeSlotViewController.swift; sourceTree = "<group>"; };
-		8341302D23681F10005046DB /* BusyHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyHours.swift; sourceTree = "<group>"; };
-		83BBA66623681AAC00A77D47 /* MacawChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacawChartView.swift; sourceTree = "<group>"; };
+		83A74790238EADDC0080034A /* MacawChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacawChartView.swift; sourceTree = "<group>"; };
+		83A74792238EAE0A0080034A /* BusyHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyHours.swift; sourceTree = "<group>"; };
 		921AEBE9DFFB7F06F648AB3C /* Pods_SJSUSRAC_SJSUSRACUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJSUSRAC_SJSUSRACUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CED8316C69F13B17944262 /* Pods-SJSUSRAC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSUSRAC.release.xcconfig"; path = "Target Support Files/Pods-SJSUSRAC/Pods-SJSUSRAC.release.xcconfig"; sourceTree = "<group>"; };
 		9B208875FDFB7E47904313EE /* Pods-SJSUSRAC-SJSUSRACUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSUSRAC-SJSUSRACUITests.release.xcconfig"; path = "Target Support Files/Pods-SJSUSRAC-SJSUSRACUITests/Pods-SJSUSRAC-SJSUSRACUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,10 +150,10 @@
 				8302286723665D4B002A1F23 /* Helpers */,
 				8302287023669751002A1F23 /* GoogleService-Info.plist */,
 				8302284123665B5C002A1F23 /* Info.plist */,
-				83BBA66623681AAC00A77D47 /* MacawChartView.swift */,
-				8341302D23681F10005046DB /* BusyHours.swift */,
 				8302283923665B5B002A1F23 /* Main.storyboard */,
 				8302283E23665B5C002A1F23 /* LaunchScreen.storyboard */,
+				83A74790238EADDC0080034A /* MacawChartView.swift */,
+				83A74792238EAE0A0080034A /* BusyHours.swift */,
 			);
 			path = SJSUSRAC;
 			sourceTree = "<group>";
@@ -457,12 +457,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8302286523665D20002A1F23 /* CreateAccountViewController.swift in Sources */,
-				83BBA66723681AAC00A77D47 /* MacawChartView.swift in Sources */,
 				8302283823665B5B002A1F23 /* ViewController.swift in Sources */,
 				830228732367A986002A1F23 /* ReserveTimeSlotViewController.swift in Sources */,
+				83A74791238EADDC0080034A /* MacawChartView.swift in Sources */,
 				8302283423665B5B002A1F23 /* AppDelegate.swift in Sources */,
-				8341302E23681F10005046DB /* BusyHours.swift in Sources */,
 				8302286923665D67002A1F23 /* Utilities.swift in Sources */,
+				83A74793238EAE0A0080034A /* BusyHours.swift in Sources */,
 				830228772367A9C4002A1F23 /* CancelTimeSlotViewController.swift in Sources */,
 				8302286D23666522002A1F23 /* HomeViewController.swift in Sources */,
 				8302286B23665D72002A1F23 /* Constants.swift in Sources */,

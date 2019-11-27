@@ -18,19 +18,19 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var checkInButton: UIButton!
     @IBOutlet weak var scanQRCodeButton: UIButton!
-    
-    
+
+
     private func getDay() {
         let weekday = Calendar.current.component(.weekday, from: Date())
         dayLabel.text = Calendar.current.weekdaySymbols[weekday-1]
         dayLabel.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
     }
-    
-    
+
+
     @IBAction func signOut(_ sender: Any) {
         transitionToFirstPage()
     }
-    
+
     @IBAction func checkInButtonTapped(_ sender: Any) {
         confirmCheckIn()
     }
@@ -43,13 +43,42 @@ class HomeViewController: UIViewController {
         getDay()
         setElements()
     }
-    
+
+    // reset time slots in database every day
+    private func resetTimeSlots () {
+        let time = getCurrentTime()
+
+        let timeReference = Firestore.firestore().collection("reservation_chart")
+        if time == "12:00 PM"{
+
+            timeReference.addSnapshotListener { (snapshot, _) in
+                guard let snapshot = snapshot else { return }
+                let doc = snapshot.documents
+                let dic = doc[1].data()
+                var renewedTimeSlot = dic
+                for key in renewedTimeSlot.keys{
+                    renewedTimeSlot.updateValue(true, forKey: key)
+                }
+
+                timeReference.document("LjUpSZCIviFeSq3fPCzc").setData(dic)
+                timeReference.document("SIg6q6u9flbtkVWTiPYn").setData(renewedTimeSlot)
+            }
+        }
+    }
+
+    private func getCurrentTime() -> String{
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        let str = formatter.string(from: Date())
+        return str
+    }
+
     private func transitionToFirstPage() {
         let firstPageViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.FirstPageController) as? ViewController
         view.window?.rootViewController = firstPageViewController
         view.window?.makeKeyAndVisible()
     }
-    
+
     private func setElements(){
         Utilities.differentStyleFilledButton(reserveTimeSlotButton)
         Utilities.styleHollowButton(cancelTimeSlotButton)
@@ -57,7 +86,7 @@ class HomeViewController: UIViewController {
         Utilities.styleFilledButton(checkInButton)
         Utilities.styleFilledButton(scanQRCodeButton)
     }
-    
+
     private func confirmCheckIn() {
         let alertController = UIAlertController(title: "Confirm check in", message: "Check in?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
@@ -70,14 +99,14 @@ class HomeViewController: UIViewController {
                 } else {
                     print("Document successfully written")
                 }
-                
+
             }
-            
+
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default) {
             UIAlertAction in print("cancelled")
         }
-        
+
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
