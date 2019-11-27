@@ -28,7 +28,7 @@ class ReserveTimeSlotViewController: UIViewController {
     @IBAction func confirmButtonTapped(_ sender: Any) {
         // get uid
         reservedTime = [selectDateButton.titleLabel!.text!:selectTimeButton.titleLabel!.text!]
-        updateDatabase(reservedTime: reservedTime)
+        updateCurrentUserReservation(reservedTime: reservedTime)
         updateReservationChart()
     }
     
@@ -110,7 +110,8 @@ class ReserveTimeSlotViewController: UIViewController {
         
     }
     
-    private func updateDatabase(reservedTime: [String:String]){
+    // update current user's reservation status
+    private func updateCurrentUserReservation(reservedTime: [String:String]){
         let db = Firestore.firestore()
         let currentUid = Auth.auth().currentUser!.uid
         db.collection("users").whereField("uid", isEqualTo: currentUid).getDocuments() { (querySnapshot, err) in
@@ -126,11 +127,6 @@ class ReserveTimeSlotViewController: UIViewController {
                 
             }
         }
-    }
-    
-    //reset reservation
-    private func resetReservation(){
-        
     }
     
     private func updateReservationChart() {

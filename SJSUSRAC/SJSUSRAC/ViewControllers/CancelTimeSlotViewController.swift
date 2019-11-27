@@ -18,44 +18,113 @@ class CancelTimeSlotViewController: UIViewController {
     
     var reservedTime = [String:String]()
     
+    let db = Firestore.firestore()
+    let currentUid = Auth.auth().currentUser!.uid
+    let timeReference = Firestore.firestore().collection("reservation_chart")
+    
     @IBAction func firstCancelButtonTapped(_ sender: Any) {
-        
+        updateTimeSlot(date: reservedTime.first!.key)
+        updateCurrentUserReservation()
+        if reservedTime.count == 0{
+            firstCancelButton.isHidden = true
+            firstReservationLabel.alpha = 0
+        }
     }
     
     @IBAction func secondCancelButtonTapped(_ sender: Any) {
+        updateTimeSlot(date: Array(reservedTime.keys)[1])
+        updateCurrentUserReservation()
+        secondCancelButton.isHidden = true
+        secondReservationLabel.alpha = 0
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        retrieveData()
+        firstReservationLabel.alpha = 0
+        secondReservationLabel.alpha = 0
+        firstCancelButton.isHidden = true
+        secondCancelButton.isHidden = true
+        updateLabels()
         
         // Do any additional setup after loading the view.
         setElements()
     }
     
-    private func retrieveData() {
-        let db = Firestore.firestore()
-        let currentUid = Auth.auth().currentUser!.uid
+    // update time slot for reservation from database and reserved time dictionary
+    private func updateTimeSlot(date: String) {
+        var tempTimeslot = [String:Any]()
+        timeReference.addSnapshotListener { (snapshot, _) in
+            guard let snapshot = snapshot else { return }
+            let doc = snapshot.documents
+            if date == "Today" {
+                tempTimeslot = doc[0].data()
+                if self.reservedTime[date] != nil {
+                    tempTimeslot.updateValue(true, forKey: self.reservedTime[date]!)
+                    self.timeReference.document("LjUpSZCIviFeSq3fPCzc").setData(tempTimeslot)
+                    // update reserved time dictionary
+                    self.reservedTime.removeValue(forKey: "Today")
+                    print(self.reservedTime)
+                }
+                
+            } else if date == "Tomorrow" {
+                tempTimeslot = doc[1].data()
+                if self.reservedTime[date] != nil{
+                    tempTimeslot.updateValue(true, forKey: self.reservedTime[date]!)
+                    self.timeReference.document("SIg6q6u9flbtkVWTiPYn").setData(tempTimeslot)
+                    
+                    // update reserved time dictionary
+                    self.reservedTime.removeValue(forKey: "Tomorrow")
+                    print(self.reservedTime)
+                }
+            }
+        }
+        
+    }
+    
+    // updating reservation labels
+    private func updateLabels() {
         db.collection("users").whereField("uid", isEqualTo: currentUid).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting Document")
             } else {
                 let doc = querySnapshot!.documents[0]
                 let documentId = doc.documentID
-                let reservationRef = db.collection("users").document(documentId)
+                let reservationRef = self.db.collection("users").document(documentId)
                 reservationRef.getDocument { (snapshot, err) in
                     if let err = err {
                         print("Error occured")
                     } else {
                         let doc = snapshot!.get("reservation") as! [String:String]
                         self.reservedTime = doc
-                        self.firstReservationLabel.text = self.reservedTime.first!.key + " at " + self.reservedTime.first!.value
-                        if self.reservedTime.count > 1 {
-                            self.secondReservationLabel.text = Array(self.reservedTime.keys)[1] + " at " + Array(self.reservedTime.values)[1]
+                        if self.reservedTime.count > 0 {
+                            self.firstReservationLabel.text = self.reservedTime.first!.key + " at " + self.reservedTime.first!.value
+                            self.firstReservationLabel.alpha = 1
+                            self.firstCancelButton.isHidden = false
+                            if self.reservedTime.count > 1 {
+                                self.secondReservationLabel.text = Array(self.reservedTime.keys)[1] + " at " + Array(self.reservedTime.values)[1]
+                                self.secondReservationLabel.alpha = 1
+                                self.secondCancelButton.isHidden = false
+                            }
                         }
                         
                     }
                 }
+                
+            }
+        }
+    }
+    
+    private func updateCurrentUserReservation() {
+        let emptyDic = [String:String]()
+        db.collection("users").whereField("uid", isEqualTo: currentUid).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting Document")
+            } else {
+                let doc = querySnapshot!.documents[0]
+                let documentId = doc.documentID
+                let reservationRef = self.db.collection("users").document(documentId)
+                reservationRef.setData(["reservation" : emptyDic], merge: true)
+                reservationRef.setData(["reservation" : self.reservedTime], merge: true)
                 
             }
         }
