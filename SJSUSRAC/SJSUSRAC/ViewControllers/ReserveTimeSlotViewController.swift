@@ -18,8 +18,6 @@ class ReserveTimeSlotViewController: UIViewController {
     @IBOutlet weak var dateTblView: UITableView!
     @IBOutlet weak var timeTblView: UITableView!
     
-    
-    
     var selectedButton = UIButton()
     var reservedTime = [String:String]()
     var reservationChart = [String:Any]()
@@ -28,8 +26,9 @@ class ReserveTimeSlotViewController: UIViewController {
     var timeSource = [String]()
     
     @IBAction func confirmButtonTapped(_ sender: Any) {
+        // get uid
         reservedTime = [selectDateButton.titleLabel!.text!:selectTimeButton.titleLabel!.text!]
-        print(reservedTime)
+        updateDatabase(reservedTime: reservedTime)
         updateReservationChart()
     }
     
@@ -111,6 +110,29 @@ class ReserveTimeSlotViewController: UIViewController {
         
     }
     
+    private func updateDatabase(reservedTime: [String:String]){
+        let db = Firestore.firestore()
+        let currentUid = Auth.auth().currentUser!.uid
+        db.collection("users").whereField("uid", isEqualTo: currentUid).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting Document")
+            } else {
+                let doc = querySnapshot!.documents[0]
+                let documentId = doc.documentID
+                print(documentId)
+                let reservationRef = db.collection("users").document(documentId)
+                
+                reservationRef.setData(["reservation" : reservedTime], merge: true)
+                
+            }
+        }
+    }
+    
+    //reset reservation
+    private func resetReservation(){
+        
+    }
+    
     private func updateReservationChart() {
         let timeReference = Firestore.firestore().collection("reservation_chart")
         reservationChart[reservedTime.first!.value] = false
@@ -130,6 +152,7 @@ class ReserveTimeSlotViewController: UIViewController {
         super.viewDidLoad()
         errorLabel.alpha = 0
         // Do any additional setup after loading the view.
+        
         dateTblView.isHidden = true
         timeTblView.isHidden = true
         setElements()

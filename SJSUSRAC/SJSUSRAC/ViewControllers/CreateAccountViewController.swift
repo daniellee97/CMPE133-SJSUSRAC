@@ -80,7 +80,7 @@ class CreateAccountViewController: UIViewController {
                     
                     //user was created
                     let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["first_name": firstName, "last_name": lastName, "studentID": studentID, "email": email, "password": password, "uid": result!.user.uid]) { (error) in
+                    db.collection("users").addDocument(data: ["first_name": firstName, "last_name": lastName, "studentID": studentID, "email": email, "password": password, "reservation": [String:String](), "uid": result!.user.uid]) { (error) in
                         
                         if error != nil {
                             

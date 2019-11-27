@@ -352,7 +352,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Il-2H-htQ">
-                                <rect key="frame" x="40" y="330" width="334" height="160"/>
+                                <rect key="frame" x="40" y="330" width="334" height="220"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtE-sT-VUi">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -366,10 +366,10 @@
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cnf-bd-rzl">
-                                        <rect key="frame" x="0.0" y="40" width="334" height="120"/>
+                                        <rect key="frame" x="0.0" y="40" width="334" height="180"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="ode-YE-uF6"/>
+                                            <constraint firstAttribute="height" constant="180" id="ode-YE-uF6"/>
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="timeCell" textLabel="bQf-4v-JXp" style="IBUITableViewCellStyleDefault" id="HoI-vb-z91">
@@ -507,44 +507,35 @@
                                 <color key="textColor" red="1" green="0.67199689060000001" blue="0.0961645629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="tgd-81-ATE">
-                                <rect key="frame" x="40" y="664" width="334" height="94"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press Cancel, then Confirm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJ8-n5-oJ1">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" red="1" green="0.67199689060000001" blue="0.0961645629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9a-3a-308">
-                                        <rect key="frame" x="0.0" y="54" width="334" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="1Lg-9h-g41"/>
-                                        </constraints>
-                                        <state key="normal" title="Confirm"/>
-                                        <connections>
-                                            <action selector="confirmButtonTapped:" destination="tkL-rJ-1hs" eventType="touchUpInside" id="11E-j8-r1Y"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press Cancel to cancel the reservation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJ8-n5-oJ1">
+                                <rect key="frame" x="40" y="728" width="334" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VDY-we-htL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.67199689060000001" blue="0.0961645629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="hyq-g0-haW">
-                                <rect key="frame" x="40" y="120" width="334" height="30"/>
+                                <rect key="frame" x="40" y="120" width="334" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nov. 15th 2019 at 15:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnY-WJ-N9u">
-                                        <rect key="frame" x="0.0" y="0.0" width="180.5" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnY-WJ-N9u">
+                                        <rect key="frame" x="0.0" y="0.0" width="180.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.67199689060000001" blue="0.0961645629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIY-f0-MvF">
-                                        <rect key="frame" x="215.5" y="0.0" width="118.5" height="30"/>
+                                        <rect key="frame" x="215.5" y="0.0" width="118.5" height="50"/>
                                         <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="firstCancelButtonTapped:" destination="tkL-rJ-1hs" eventType="touchUpInside" id="b4w-0m-6cS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="g52-uc-0cS">
-                                <rect key="frame" x="40" y="170" width="334" height="30"/>
+                                <rect key="frame" x="40" y="190" width="334" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nov. 16th 2019 at 16:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoW-4V-e4I">
                                         <rect key="frame" x="0.0" y="0.0" width="181.5" height="30"/>
@@ -555,6 +546,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OT7-d8-UeW">
                                         <rect key="frame" x="216.5" y="0.0" width="117.5" height="30"/>
                                         <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="secondCancelButtonTapped:" destination="tkL-rJ-1hs" eventType="touchUpInside" id="Nnv-gv-p3b"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -563,24 +557,25 @@
                         <constraints>
                             <constraint firstItem="hyq-g0-haW" firstAttribute="top" secondItem="PTN-VE-EpN" secondAttribute="bottom" constant="50" id="0Zb-ne-WW4"/>
                             <constraint firstItem="g52-uc-0cS" firstAttribute="leading" secondItem="26A-U9-oQA" secondAttribute="leading" constant="40" id="0t4-uw-iKO"/>
-                            <constraint firstItem="tgd-81-ATE" firstAttribute="leading" secondItem="26A-U9-oQA" secondAttribute="leading" constant="40" id="6cN-8X-ztV"/>
                             <constraint firstItem="g52-uc-0cS" firstAttribute="top" secondItem="hyq-g0-haW" secondAttribute="bottom" constant="20" id="7rC-qe-Sti"/>
-                            <constraint firstItem="26A-U9-oQA" firstAttribute="bottom" secondItem="tgd-81-ATE" secondAttribute="bottom" constant="50" id="DYc-1t-QmE"/>
                             <constraint firstItem="26A-U9-oQA" firstAttribute="trailing" secondItem="g52-uc-0cS" secondAttribute="trailing" constant="40" id="EhP-GM-kfa"/>
-                            <constraint firstItem="26A-U9-oQA" firstAttribute="trailing" secondItem="tgd-81-ATE" secondAttribute="trailing" constant="40" id="Pav-93-659"/>
                             <constraint firstItem="PTN-VE-EpN" firstAttribute="leading" secondItem="26A-U9-oQA" secondAttribute="leading" constant="40" id="Pga-dg-YnV"/>
                             <constraint firstItem="26A-U9-oQA" firstAttribute="trailing" secondItem="hyq-g0-haW" secondAttribute="trailing" constant="40" id="avr-Dk-O5Q"/>
                             <constraint firstItem="PTN-VE-EpN" firstAttribute="top" secondItem="26A-U9-oQA" secondAttribute="top" constant="40" id="az3-Tc-D17"/>
+                            <constraint firstItem="26A-U9-oQA" firstAttribute="trailing" secondItem="pJ8-n5-oJ1" secondAttribute="trailing" constant="40" id="dlr-p4-0Pl"/>
                             <constraint firstItem="hyq-g0-haW" firstAttribute="leading" secondItem="26A-U9-oQA" secondAttribute="leading" constant="40" id="fz9-LO-MeB"/>
+                            <constraint firstItem="pJ8-n5-oJ1" firstAttribute="leading" secondItem="26A-U9-oQA" secondAttribute="leading" constant="40" id="g6a-7j-1kG"/>
+                            <constraint firstItem="26A-U9-oQA" firstAttribute="bottom" secondItem="pJ8-n5-oJ1" secondAttribute="bottom" constant="40" id="tcy-qp-zaG"/>
                             <constraint firstItem="26A-U9-oQA" firstAttribute="trailing" secondItem="PTN-VE-EpN" secondAttribute="trailing" constant="40" id="xye-Gc-CRh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="26A-U9-oQA"/>
                     </view>
                     <navigationItem key="navigationItem" id="U8H-qe-n1H"/>
                     <connections>
-                        <outlet property="confirmButton" destination="v9a-3a-308" id="Hdu-Xj-K25"/>
                         <outlet property="firstCancelButton" destination="OIY-f0-MvF" id="Y8f-yH-OMN"/>
+                        <outlet property="firstReservationLabel" destination="PnY-WJ-N9u" id="hRn-5D-LuO"/>
                         <outlet property="secondCancelButton" destination="OT7-d8-UeW" id="uL0-KG-NT6"/>
+                        <outlet property="secondReservationLabel" destination="eoW-4V-e4I" id="aGb-pc-vWC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRV-GK-jfw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
