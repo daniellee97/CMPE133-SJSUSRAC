@@ -22,14 +22,19 @@ class ReserveTimeSlotViewController: UIViewController {
     var reservedTime = [String:String]()
     var reservationChart = [String:Any]()
     var timeAlreadyLoaded = false
-    var dateSource = ["Today", "Tomorrow"]
+    var dateSource = ["12/05/19", "12/06/19"]
     var timeSource = [String]()
     
     @IBAction func confirmButtonTapped(_ sender: Any) {
         // get uid
-        reservedTime = [selectDateButton.titleLabel!.text!:selectTimeButton.titleLabel!.text!]
-        updateCurrentUserReservation(reservedTime: reservedTime)
-        updateReservationChart()
+        if selectDateButton.titleLabel!.text! == "Select the date", selectTimeButton.titleLabel!.text! == "Select the time" {
+            errorLabel.text = "Please fill all area"
+            errorLabel.alpha = 1
+        } else {
+            reservedTime = [selectDateButton.titleLabel!.text!:selectTimeButton.titleLabel!.text!]
+            updateCurrentUserReservation(reservedTime: reservedTime)
+            updateReservationChart()
+        }
     }
     
     @IBAction private func dateButtonTapped(_ sender: Any) {
@@ -56,7 +61,7 @@ class ReserveTimeSlotViewController: UIViewController {
                     guard let snapshot = snapshot else { return }
                     let doc = snapshot.documents
                     var dic = doc[0].data()
-                    if self.selectDateButton.titleLabel?.text == "Tomorrow" {
+                    if self.selectDateButton.titleLabel?.text == "12/06/19" {
                         dic = doc[1].data()
                     }
                     self.reservationChart = dic
@@ -132,15 +137,12 @@ class ReserveTimeSlotViewController: UIViewController {
     private func updateReservationChart() {
         let timeReference = Firestore.firestore().collection("reservation_chart")
         reservationChart[reservedTime.first!.value] = false
-        if self.selectDateButton.titleLabel?.text == "Today" {
+        if self.selectDateButton.titleLabel?.text == "12/05/19" {
             timeReference.document("LjUpSZCIviFeSq3fPCzc").setData(reservationChart)
             transitionToHomePage()
-        } else if self.selectDateButton.titleLabel?.text == "Tomorrow" {
+        } else if self.selectDateButton.titleLabel?.text == "12/06/19" {
             timeReference.document("SIg6q6u9flbtkVWTiPYn").setData(reservationChart)
             transitionToHomePage()
-        } else {
-            errorLabel.text = "Please fill all area"
-            errorLabel.alpha = 1
         }
     }
     
