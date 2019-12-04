@@ -1,3 +1,11 @@
+//
+//  CameraViewController.swift
+//  SJSUSRAC
+//
+//  Created by Daniel Lee on 12/3/19.
+//  Copyright © 2019 Daniel Lee. All rights reserved.
+//
+
 import Foundation
 import AVFoundation
 import UIKit
