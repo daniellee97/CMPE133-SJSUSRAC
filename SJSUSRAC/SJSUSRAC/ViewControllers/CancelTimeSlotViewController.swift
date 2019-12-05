@@ -68,24 +68,24 @@ class CancelTimeSlotViewController: UIViewController {
         timeReference.addSnapshotListener { (snapshot, _) in
             guard let snapshot = snapshot else { return }
             let doc = snapshot.documents
-            if date == "12/05/19" {
+            if date == "12/05/19 rack1" {
                 tempTimeslot = doc[0].data()
                 if self.reservedTime[date] != nil {
                     tempTimeslot.updateValue(true, forKey: self.reservedTime[date]!)
                     self.timeReference.document("LjUpSZCIviFeSq3fPCzc").setData(tempTimeslot)
                     // update reserved time dictionary
-                    self.reservedTime.removeValue(forKey: "12/05/19")
+                    self.reservedTime.removeValue(forKey: "12/05/19 rack1")
                     print(self.reservedTime)
                 }
                 
-            } else if date == "12/06/19" {
+            } else if date == "12/06/19 rack1" {
                 tempTimeslot = doc[1].data()
                 if self.reservedTime[date] != nil{
                     tempTimeslot.updateValue(true, forKey: self.reservedTime[date]!)
                     self.timeReference.document("SIg6q6u9flbtkVWTiPYn").setData(tempTimeslot)
                     
                     // update reserved time dictionary
-                    self.reservedTime.removeValue(forKey: "12/06/19")
+                    self.reservedTime.removeValue(forKey: "12/06/19 rack1")
                     print(self.reservedTime)
                 }
             }

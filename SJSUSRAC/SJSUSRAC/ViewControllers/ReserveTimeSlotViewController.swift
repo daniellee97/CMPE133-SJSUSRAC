@@ -22,7 +22,7 @@ class ReserveTimeSlotViewController: UIViewController {
     var reservedTime = [String:String]()
     var reservationChart = [String:Any]()
     var timeAlreadyLoaded = false
-    var dateSource = ["12/05/19", "12/06/19"]
+    var dateSource = ["12/05/19 rack1", "12/06/19 rack1"]
     var timeSource = [String]()
     
     @IBAction func confirmButtonTapped(_ sender: Any) {
@@ -61,7 +61,7 @@ class ReserveTimeSlotViewController: UIViewController {
                     guard let snapshot = snapshot else { return }
                     let doc = snapshot.documents
                     var dic = doc[0].data()
-                    if self.selectDateButton.titleLabel?.text == "12/06/19" {
+                    if self.selectDateButton.titleLabel?.text == "12/06/19 rack1" {
                         dic = doc[1].data()
                     }
                     self.reservationChart = dic
@@ -137,10 +137,10 @@ class ReserveTimeSlotViewController: UIViewController {
     private func updateReservationChart() {
         let timeReference = Firestore.firestore().collection("reservation_chart")
         reservationChart[reservedTime.first!.value] = false
-        if self.selectDateButton.titleLabel?.text == "12/05/19" {
+        if self.selectDateButton.titleLabel?.text == "12/05/19 rack1" {
             timeReference.document("LjUpSZCIviFeSq3fPCzc").setData(reservationChart)
             transitionToHomePage()
-        } else if self.selectDateButton.titleLabel?.text == "12/06/19" {
+        } else if self.selectDateButton.titleLabel?.text == "12/06/19 rack1" {
             timeReference.document("SIg6q6u9flbtkVWTiPYn").setData(reservationChart)
             transitionToHomePage()
         }
